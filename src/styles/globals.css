@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  
+  /* Default theme colors - will be overridden by data attributes */
+  --color-primary: #2563eb;
+  --color-primary-text: #ffffff;
+  --color-secondary: #64748b;
+  --color-secondary-text: #ffffff;
+  --color-accent: #f59e0b;
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-border: #e2e8f0;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+
+  /* Define Tailwind color classes using CSS variables */
+  --color-theme-primary: var(--color-primary);
+  --color-theme-primary-text: var(--color-primary-text);
+  --color-theme-secondary: var(--color-secondary);
+  --color-theme-secondary-text: var(--color-secondary-text);
+  --color-theme-accent: var(--color-accent);
+  --color-theme-bg: var(--color-background);
+  --color-theme-fg: var(--color-foreground);
+  --color-theme-muted: var(--color-muted);
+  --color-theme-muted-fg: var(--color-muted-foreground);
+  --color-theme-border: var(--color-border);
+  --color-theme-card: var(--color-card);
+  --color-theme-card-fg: var(--color-card-foreground);
+}
+
+/* Global styles using theme variables */
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Utility classes for theme colors */
+.bg-theme-primary { background-color: var(--color-primary); }
+.bg-theme-secondary { background-color: var(--color-secondary); }
+.bg-theme-accent { background-color: var(--color-accent); }
+.bg-theme-bg { background-color: var(--color-background); }
+.bg-theme-muted { background-color: var(--color-muted); }
+.bg-theme-card { background-color: var(--color-card); }
+
+.text-theme-primary { color: var(--color-primary); }
+.text-theme-primary-text { color: var(--color-primary-text); }
+.text-theme-secondary { color: var(--color-secondary); }
+.text-theme-secondary-text { color: var(--color-secondary-text); }
+.text-theme-accent { color: var(--color-accent); }
+.text-theme-fg { color: var(--color-foreground); }
+.text-theme-muted-fg { color: var(--color-muted-foreground); }
+.text-theme-card-fg { color: var(--color-card-foreground); }
+
+.border-theme-border { border-color: var(--color-border); }
+.border-theme-primary { border-color: var(--color-primary); }
+
+/* Hero layout variations */
+[data-hero-style="minimal"] .hero-container {
+  padding-block: 3rem;
+}
+
+[data-hero-style="fullscreen"] .hero-container {
+  min-height: 100vh;
+}
+
+[data-hero-style="split"] .hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+[data-hero-style="split"] .hero-container .hero-content {
+  order: 1;
+}
+
+[data-hero-style="split"] .hero-container .hero-image {
+  order: 2;
+}
+
+/* Product card variations */
+[data-product-card-style="compact"] .product-card {
+  padding: 0.75rem;
+}
+
+[data-product-card-style="compact"] .product-card-image {
+  aspect-ratio: 1/1;
+}
+
+[data-product-card-style="detailed"] .product-card {
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+[data-product-card-style="detailed"] .product-card-description {
+  display: block;
+}
+
+/* Navigation variations */
+[data-navigation-style="centered"] nav {
+  justify-content: center;
+}
+
+[data-navigation-style="centered"] nav .nav-links {
+  flex-grow: 0;
+}
+
+/* Theme-specific animations */
+@keyframes theme-transition {
+  from {
+    opacity: 0.95;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+[data-theme] {
+  animation: theme-transition 0.3s ease;
+}
