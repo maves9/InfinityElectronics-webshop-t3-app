@@ -5,9 +5,11 @@ import Link from "next/link"
 import type { CartItemWithProduct } from "~/types/product"
 import { Button, Text, NumberInput } from "~/elements"
 import { formatPrice } from "~/lib/utils"
+import { translations, type Locale } from "~/i18n"
 
 interface CartItemProps {
   item: CartItemWithProduct
+  locale: Locale
   onUpdateQuantity: (
     productId: number,
     quantity: number,
@@ -19,10 +21,10 @@ interface CartItemProps {
   ) => void
 }
 
-export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
+export function CartItem({ item, locale, onUpdateQuantity, onRemove }: CartItemProps) {
+  const t = translations[locale].cart
   return (
     <div className="flex gap-4 border border-gray-200 bg-white p-4">
-      {/* Product Image */}
       <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden border border-gray-200 bg-gray-100">
         <Image
           src={item.product.image}
@@ -33,7 +35,6 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
         />
       </div>
 
-      {/* Product Info */}
       <div className="flex flex-1 flex-col">
         <div className="mb-2 flex items-start justify-between">
           <div>
@@ -48,9 +49,9 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
             </Text>
             {(item.selectedSize ?? item.selectedColor) && (
               <Text size="sm" color="muted" className="mt-1">
-                {item.selectedSize && `Size: ${item.selectedSize}`}
+                {item.selectedSize && `${t.size}: ${item.selectedSize}`}
                 {item.selectedSize && item.selectedColor && " | "}
-                {item.selectedColor && `Color: ${item.selectedColor}`}
+                {item.selectedColor && `${t.color}: ${item.selectedColor}`}
               </Text>
             )}
           </div>
@@ -59,7 +60,6 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
           </p>
         </div>
 
-        {/* Quantity Controls */}
         <div className="mt-auto flex items-center justify-between">
           <NumberInput
             value={item.quantity}
@@ -84,7 +84,7 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
             size="sm"
             className="text-red-600 hover:text-red-700"
           >
-            Remove
+            {t.remove}
           </Button>
         </div>
       </div>

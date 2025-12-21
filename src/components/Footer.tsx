@@ -1,26 +1,28 @@
 import { useTranslations } from "next-intl"
 import { Link, routeKeyToHref } from "~/i18n/routing-intl"
 import { footerNavigationSections, siteConfig } from "~/data"
+import { Heading } from "~/elements"
 
 export function Footer() {
   const t = useTranslations('footer')
   const tLinks = useTranslations('footer.links')
+  const tSite = useTranslations('site')
 
   return (
     <footer className="border-t border-theme-border bg-theme-muted">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
-            <h3 className="mb-4 text-lg font-bold text-theme-fg">
-              {siteConfig.name}
-            </h3>
+            <Heading level={3} size="lg" className="mb-4 text-theme-fg">
+              {tSite('name')}
+            </Heading>
             <p className="text-sm text-theme-muted-fg">
-              {siteConfig.tagline}
+              {tSite('tagline')}
             </p>
           </div>
 
           <div>
-            <h4 className="mb-4 font-semibold text-theme-fg">{t('quickLinks')}</h4>
+            <Heading level={4} size="md" weight="semibold" className="mb-4 text-theme-fg">{t('quickLinks')}</Heading>
             <ul className="space-y-2">
               {footerNavigationSections.quickLinks.map((item) => (
                 <li key={item.routeKey}>
@@ -36,7 +38,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 font-semibold text-theme-fg">{t('legal')}</h4>
+            <Heading level={4} size="md" weight="semibold" className="mb-4 text-theme-fg">{t('legal')}</Heading>
             <ul className="space-y-2">
               {footerNavigationSections.legal.map((item) => (
                 <li key={item.routeKey}>
@@ -52,7 +54,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 font-semibold text-theme-fg">{t('followUs')}</h4>
+            <Heading level={4} size="md" weight="semibold" className="mb-4 text-theme-fg">{t('followUs')}</Heading>
             <div className="flex gap-4">
               <a
                 href="https://facebook.com"

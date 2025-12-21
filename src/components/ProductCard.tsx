@@ -2,6 +2,7 @@ import { Link } from "~/i18n/routing-intl"
 import Image from "next/image"
 import type { Product } from "~/types/product"
 import { formatPrice } from "~/lib/utils"
+import { Heading } from "~/elements"
 
 interface ProductCardProps {
   product: Product
@@ -30,9 +31,9 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           {product.category}
         </p>
 
-        <h3 className="mb-2 line-clamp-2 text-sm font-semibold text-theme-card-fg group-hover:opacity-80">
+        <Heading level={3} size="sm" weight="semibold" className="mb-2 line-clamp-2 text-theme-card-fg group-hover:opacity-80">
           {product.title}
-        </h3>
+        </Heading>
 
         <div className="mb-2 flex items-center gap-1">
           <div className="flex">

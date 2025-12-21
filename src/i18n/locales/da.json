@@ -7,7 +7,28 @@
     "featuredProducts": {
       "title": "Udvalgte Produkter",
       "description": "Tjek vores håndplukkede udvalg af fantastiske produkter"
+    },
+    "hero": {
+      "welcome": {
+        "title": "Velkommen til InfinityElectronics",
+        "description": "Oplev fantastiske produkter til uovertruffen priser",
+        "cta": "Shop Nu"
+      },
+      "newArrivals": {
+        "title": "Nye Ankomster",
+        "description": "Tjek vores nyeste samling af produkter",
+        "cta": "Se Samling"
+      },
+      "specialOffers": {
+        "title": "Specielle Tilbud",
+        "description": "Gå ikke glip af vores eksklusive tilbud",
+        "cta": "Se Tilbud"
+      }
     }
+  },
+  "site": {
+    "name": "InfinityElectronics",
+    "tagline": "Din one-stop shop til kvalitetsprodukter til gode priser."
   },
   "navigation": {
     "home": "Hjem",
@@ -55,7 +76,9 @@
     "tax": "Moms",
     "total": "Total",
     "proceedToCheckout": "Gå til Betaling",
-    "remove": "Fjern"
+    "remove": "Fjern",
+    "size": "Størrelse",
+    "color": "Farve"
   },
   "products": {
     "title": "Alle Produkter",

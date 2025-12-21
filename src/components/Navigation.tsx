@@ -8,6 +8,7 @@ import { mainNavigationItems, siteConfig } from "~/data"
 
 export function Navigation() {
   const t = useTranslations('navigation')
+  const tSite = useTranslations('site')
 
   return (
     <nav className="nav-links sticky top-0 z-50 border-b border-theme-border bg-theme-bg shadow-sm">
@@ -17,7 +18,7 @@ export function Navigation() {
             href="/" 
             className="text-2xl font-bold text-theme-primary"
           >
-            {siteConfig.logo.text}
+            {tSite('name')}
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">

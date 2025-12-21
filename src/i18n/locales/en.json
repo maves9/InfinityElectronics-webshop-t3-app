@@ -7,7 +7,28 @@
     "featuredProducts": {
       "title": "Featured Products",
       "description": "Check out our handpicked selection of amazing products"
+    },
+    "hero": {
+      "welcome": {
+        "title": "Welcome to InfinityElectronics",
+        "description": "Discover amazing products at unbeatable prices",
+        "cta": "Shop Now"
+      },
+      "newArrivals": {
+        "title": "New Arrivals",
+        "description": "Check out our latest collection of products",
+        "cta": "View Collection"
+      },
+      "specialOffers": {
+        "title": "Special Offers",
+        "description": "Don't miss out on our exclusive deals",
+        "cta": "View Deals"
+      }
     }
+  },
+  "site": {
+    "name": "InfinityElectronics",
+    "tagline": "Your one-stop shop for quality products at great prices."
   },
   "navigation": {
     "home": "Home",
@@ -55,7 +76,9 @@
     "tax": "Tax",
     "total": "Total",
     "proceedToCheckout": "Proceed to Checkout",
-    "remove": "Remove"
+    "remove": "Remove",
+    "size": "Size",
+    "color": "Color"
   },
   "products": {
     "title": "All Products",

@@ -17,7 +17,8 @@
  * - Product options (sizes, colors) could be managed via admin panel
  */
 
-export { defaultHeroSlides, homePageHeroSlides } from "./heroSlides"
+export { homePageHeroSlideConfigs } from "./heroSlides"
+export type { HeroSlideConfig } from "./heroSlides"
 export { mainNavigationItems, footerNavigationSections, siteConfig } from "./navigation"
 export type { NavigationItem } from "./navigation"
 export { PRODUCT_SIZES, PRODUCT_COLORS } from "./productOptions"

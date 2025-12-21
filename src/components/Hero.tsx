@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { defaultHeroSlides } from "~/data"
+import { Heading } from "~/elements"
 
 export interface HeroSlide {
   title: string
@@ -14,13 +14,13 @@ export interface HeroSlide {
 }
 
 interface HeroProps {
-  slides?: HeroSlide[]
+  slides: HeroSlide[]
   autoPlay?: boolean
   interval?: number
 }
 
 export function Hero({
-  slides = defaultHeroSlides,
+  slides,
   autoPlay = true,
   interval = 5000,
 }: HeroProps) {
@@ -52,7 +52,6 @@ export function Hero({
 
   return (
     <div className="hero-container relative h-[500px] w-full overflow-hidden bg-theme-muted md:h-[600px]">
-      {/* Background Image */}
       <div className="hero-image absolute inset-0 overflow-hidden">
         <Image
           src={slide.image}
@@ -66,10 +65,9 @@ export function Hero({
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
-      {/* Content */}
       <div className="hero-content relative z-10 flex h-full items-center justify-center px-4">
         <div className="max-w-4xl text-center text-white">
-          <h1 className="mb-6 text-4xl font-bold md:text-6xl">{slide.title}</h1>
+          <Heading level={1} size="4xl" className="mb-6 text-white md:text-6xl">{slide.title}</Heading>
           <p className="mb-8 text-lg md:text-xl">{slide.description}</p>
           <Link
             href={slide.ctaLink}
@@ -80,7 +78,6 @@ export function Hero({
         </div>
       </div>
 
-      {/* Navigation Arrows */}
       {slides.length > 1 && (
         <>
           <button
@@ -124,7 +121,6 @@ export function Hero({
         </>
       )}
 
-      {/* Dots Indicator */}
       {slides.length > 1 && (
         <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2">
           {slides.map((_, index) => (

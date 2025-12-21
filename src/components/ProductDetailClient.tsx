@@ -34,7 +34,6 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-        {/* Product Image */}
         <div className="relative aspect-square w-full overflow-hidden border border-gray-200 bg-gray-100">
           <Image
             src={product.image}
@@ -46,32 +45,26 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
           />
         </div>
 
-        {/* Product Info */}
         <div className="flex flex-col">
-          {/* Category */}
           <Text size="sm" color="muted" className="mb-2 uppercase">
             {product.category}
           </Text>
 
-          {/* Title */}
           <Heading level={1} className="mb-4">
             {product.title}
           </Heading>
 
-          {/* Price */}
           <p className="mb-6 text-4xl font-bold text-gray-900">
             {formatPrice(product.price)}
           </p>
 
-          {/* Description */}
           <div className="mb-6">
-            <h2 className="mb-2 text-lg font-semibold text-gray-900">
+            <Heading level={2} size="lg" weight="semibold" className="mb-2">
               {t('description')}
-            </h2>
+            </Heading>
             <p className="text-gray-600">{product.description}</p>
           </div>
 
-          {/* Size Selection */}
           <div className="mb-6">
             <Heading level={3} size="sm" weight="semibold" className="mb-3">
               {t('selectSize')}
@@ -91,7 +84,6 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
             </div>
           </div>
 
-          {/* Color Selection */}
           <div className="mb-6">
             <Heading level={3} size="sm" weight="semibold" className="mb-3">
               {t('selectColor')}
@@ -115,7 +107,6 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
             </div>
           </div>
 
-          {/* Quantity Selection */}
           <div className="mb-6">
             <NumberInput
               label={t('quantity')}
@@ -126,7 +117,6 @@ export function ProductDetailClient({ product }: ProductDetailClientProps) {
             />
           </div>
 
-          {/* Add to Cart Button */}
           <div className="mt-auto flex gap-4">
             <Button
               onClick={handleAddToCart}

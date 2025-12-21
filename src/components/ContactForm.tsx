@@ -17,14 +17,7 @@ export function ContactForm({ locale }: ContactFormProps) {
   })
   const [submitted, setSubmitted] = useState(false)
 
-  const t = translations[locale].contact?.form || {
-    name: "Name *",
-    email: "Email *",
-    subject: "Subject *",
-    message: "Message *",
-    submit: "Send Message",
-    success: "Message Sent! ✓",
-  }
+  const t = translations[locale].contact.form
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()

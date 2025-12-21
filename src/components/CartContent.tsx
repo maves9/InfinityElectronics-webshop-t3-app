@@ -47,7 +47,6 @@ export function CartContent() {
     0,
   )
 
-  // Show empty cart if no items
   if (cart.items.length === 0) {
     return <EmptyCart />
   }
@@ -80,13 +79,13 @@ export function CartContent() {
       </div>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-        {/* Cart Items */}
         <div className="lg:col-span-2">
           <div className="space-y-4">
             {cartItemsWithProducts.map((item, index) => (
               <CartItem
                 key={`${item.productId}-${item.selectedSize}-${item.selectedColor}-${index}`}
                 item={item}
+                locale={locale}
                 onUpdateQuantity={updateQuantity}
                 onRemove={removeFromCart}
               />
@@ -94,7 +93,6 @@ export function CartContent() {
           </div>
         </div>
 
-        {/* Order Summary */}
         <OrderSummary total={total} />
       </div>
     </div>

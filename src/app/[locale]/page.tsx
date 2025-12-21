@@ -2,19 +2,29 @@ import { getTranslations } from 'next-intl/server'
 import { Hero } from "~/components/Hero"
 import { FeaturedProducts } from "~/components/FeaturedProducts"
 import { getLimitedProducts } from "~/lib/api"
-import { homePageHeroSlides } from "~/data"
+import { homePageHeroSlideConfigs } from "~/data"
+import type { HeroSlide } from "~/components/Hero"
 
 export default async function HomePage() {
   const featuredProducts = await getLimitedProducts(8)
-  const t = await getTranslations('home.featuredProducts')
+  const tFeatured = await getTranslations('home.featuredProducts')
+  const tHero = await getTranslations('home.hero')
+
+  const heroSlides: HeroSlide[] = homePageHeroSlideConfigs.map(config => ({
+    title: tHero(`${config.translationKey}.title`),
+    description: tHero(`${config.translationKey}.description`),
+    cta: tHero(`${config.translationKey}.cta`),
+    image: config.image,
+    ctaLink: config.ctaLink,
+  }))
 
   return (
     <div className="bg-white">
-      <Hero slides={homePageHeroSlides} autoPlay={true} interval={5000} />
+      <Hero slides={heroSlides} autoPlay={true} interval={5000} />
       <FeaturedProducts
         products={featuredProducts}
-        title={t('title')}
-        description={t('description')}
+        title={tFeatured('title')}
+        description={tFeatured('description')}
         priorityLoad={4}
       />
     </div>

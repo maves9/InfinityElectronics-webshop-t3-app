@@ -1,5 +1,6 @@
 import { getPageTranslations } from "~/i18n"
 import type { Locale } from "~/i18n"
+import { Heading } from "~/elements"
 
 interface PrivacyPageProps {
   params: Promise<{ locale: Locale }>
@@ -13,7 +14,7 @@ export default async function PrivacyPage({ params }: PrivacyPageProps) {
     <div className="bg-white py-16">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
-          <h1 className="mb-8 text-4xl font-bold text-gray-900">{title}</h1>
+          <Heading level={1} size="4xl" className="mb-8">{title}</Heading>
 
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>

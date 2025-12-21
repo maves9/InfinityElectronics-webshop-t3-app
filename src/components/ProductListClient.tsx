@@ -13,7 +13,7 @@ interface ProductListClientProps {
   locale: Locale
 }
 
-const ITEMS_PER_PAGE = 12
+const ITEMS_PER_PAGE = 24
 
 export function ProductListClient({ products, categories, locale }: ProductListClientProps) {
   const t = translations[locale]
@@ -23,23 +23,19 @@ export function ProductListClient({ products, categories, locale }: ProductListC
   const [searchQuery, setSearchQuery] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
-  // Filter and sort products
   const filteredAndSortedProducts = useMemo(() => {
     let result = [...products]
 
-    // Filter by search query
     if (searchQuery) {
       result = result.filter((product) =>
         product.title.toLowerCase().includes(searchQuery.toLowerCase()),
       )
     }
 
-    // Filter by category
     if (selectedCategory !== "all") {
       result = result.filter((product) => product.category === selectedCategory)
     }
 
-    // Sort products
     switch (sortBy) {
       case "price-asc":
         result.sort((a, b) => a.price - b.price)
@@ -63,11 +59,9 @@ export function ProductListClient({ products, categories, locale }: ProductListC
     return result
   }, [products, selectedCategory, sortBy, searchQuery])
 
-  // Get displayed products
   const displayedProducts = filteredAndSortedProducts.slice(0, itemsToShow)
   const hasMore = itemsToShow < filteredAndSortedProducts.length
 
-  // Reset items to show when filters change
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category)
     setItemsToShow(ITEMS_PER_PAGE)
@@ -94,9 +88,7 @@ export function ProductListClient({ products, categories, locale }: ProductListC
 
   return (
     <>
-      {/* Filters and Controls */}
       <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        {/* Search */}
         <div className="flex-1 md:max-w-md">
           <Input
             type="text"
@@ -106,7 +98,6 @@ export function ProductListClient({ products, categories, locale }: ProductListC
           />
         </div>
 
-        {/* Category Filter */}
         <div className="flex items-center gap-2">
           <label
             htmlFor="category"
@@ -128,7 +119,6 @@ export function ProductListClient({ products, categories, locale }: ProductListC
           </Select>
         </div>
 
-        {/* Sort */}
         <div className="flex items-center gap-2">
           <label htmlFor="sort" className="text-sm font-medium text-gray-700">
             {t.products.sortLabel}
@@ -148,14 +138,12 @@ export function ProductListClient({ products, categories, locale }: ProductListC
         </div>
       </div>
 
-      {/* Results Count */}
       <Text color="muted" className="mb-4">
         {t.products.showingResults
           .replace("{count}", displayedProducts.length.toString())
           .replace("{total}", filteredAndSortedProducts.length.toString())}
       </Text>
 
-      {/* Products Grid */}
       {displayedProducts.length > 0 ? (
         <>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
@@ -164,7 +152,6 @@ export function ProductListClient({ products, categories, locale }: ProductListC
             ))}
           </div>
 
-          {/* Show More Button */}
           {hasMore && (
             <div className="mt-8 text-center">
               <Button
@@ -178,7 +165,6 @@ export function ProductListClient({ products, categories, locale }: ProductListC
             </div>
           )}
 
-          {/* Loading Skeletons */}
           {isLoading && (
             <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
               {Array.from({ length: ITEMS_PER_PAGE }).map((_, i) => (

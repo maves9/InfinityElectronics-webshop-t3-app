@@ -9,6 +9,9 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  args: {
+    locale: "en",
+  },
 } satisfies Meta<typeof CartItem>
 
 export default meta
@@ -38,6 +41,7 @@ export const Default: Story = {
             quantity,
             product: sampleProduct,
           }}
+          locale="en"
           onRemove={() => alert("Remove clicked")}
           onUpdateQuantity={(_, qty) => setQuantity(qty)}
         />
@@ -46,6 +50,7 @@ export const Default: Story = {
   },
   args: {
     item: { productId: 1, quantity: 1, product: sampleProduct },
+    locale: "en",
     onRemove: () => {},
     onUpdateQuantity: () => {},
   },
@@ -64,6 +69,7 @@ export const WithOptions: Story = {
             selectedColor: "Black",
             product: sampleProduct,
           }}
+          locale="en"
           onRemove={() => alert("Remove clicked")}
           onUpdateQuantity={(_, qty) => setQuantity(qty)}
         />
@@ -72,6 +78,7 @@ export const WithOptions: Story = {
   },
   args: {
     item: { productId: 1, quantity: 2, product: sampleProduct },
+    locale: "en",
     onRemove: () => {},
     onUpdateQuantity: () => {},
   },
@@ -91,6 +98,7 @@ export const MultipleItems: Story = {
             quantity: qty1,
             product: sampleProduct
           }}
+          locale="en"
           onRemove={() => alert("Remove item 1")}
           onUpdateQuantity={(_, qty) => setQty1(qty)}
         />
@@ -107,6 +115,7 @@ export const MultipleItems: Story = {
               price: 399.99,
             }
           }}
+          locale="en"
           onRemove={() => alert("Remove item 2")}
           onUpdateQuantity={(_, qty) => setQty2(qty)}
         />
@@ -122,6 +131,7 @@ export const MultipleItems: Story = {
               price: 79.99,
             }
           }}
+          locale="en"
           onRemove={() => alert("Remove item 3")}
           onUpdateQuantity={(_, qty) => setQty3(qty)}
         />
