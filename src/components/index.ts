@@ -1,10 +1,3 @@
-/**
- * Component Library Exports
- *
- * This file provides convenient exports for all reusable components
- * in the InfinityElectronics e-commerce application.
- */
-
 // Hero Components
 export { Hero } from "./Hero"
 export type { HeroSlide } from "./Hero"

@@ -45,11 +45,14 @@ export async function generateMetadata({
   }
 }
 
-export default async function ProductsPage() {
+export default async function ProductsPage({
+  params,
+}: ProductsPageProps) {
+  const { locale } = await params
   const [products, categories] = await Promise.all([
     getAllProducts(),
     getCategories(),
   ])
 
-  return <ProductList products={products} categories={categories} />
+  return <ProductList products={products} categories={categories} locale={locale} />
 }

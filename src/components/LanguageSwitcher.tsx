@@ -5,15 +5,9 @@ import { usePathname as useNextPathname, useParams } from 'next/navigation'
 import { routing } from '~/i18n/routing-intl'
 import NextLink from 'next/link'
 
-/**
- * Language Switcher Component
- * Allows users to switch between available locales using next-intl
- * Automatically maintains the current page when switching languages
- */
 export function LanguageSwitcher() {
   const locale = useLocale()
   const pathname = useNextPathname()
-  const params = useParams()
 
   const languageNames: Record<string, string> = {
     en: "English",
@@ -24,8 +18,6 @@ export function LanguageSwitcher() {
     <div className="flex items-center gap-2">
       {routing.locales.map((loc) => {
         const isActive = loc === locale
-        
-        // Remove current locale from pathname and add new locale
         const pathWithoutLocale = pathname.replace(`/${locale}`, '')
         const newPath = `/${loc}${pathWithoutLocale}`
 

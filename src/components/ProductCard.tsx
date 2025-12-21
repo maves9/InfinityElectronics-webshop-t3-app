@@ -1,5 +1,3 @@
-"use client"
-
 import { Link } from "~/i18n/routing-intl"
 import Image from "next/image"
 import type { Product } from "~/types/product"
