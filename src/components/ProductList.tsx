@@ -1,10 +1,12 @@
 "use client"
 
+import { useParams } from "next/navigation"
 import type { Product } from "~/types/product"
 import { ProductCard } from "./ProductCard"
 import { ProductCardSkeleton } from "./ProductCardSkeleton"
 import { Input, Select, Button, Heading, Text } from "~/elements"
 import { useState, useMemo } from "react"
+import { translations, type Locale } from "~/i18n"
 
 interface ProductListProps {
   products: Product[]
@@ -14,6 +16,9 @@ interface ProductListProps {
 const ITEMS_PER_PAGE = 12
 
 export function ProductList({ products, categories }: ProductListProps) {
+  const params = useParams()
+  const locale = params.locale as Locale
+  const t = translations[locale]
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
   const [sortBy, setSortBy] = useState<string>("default")
   const [itemsToShow, setItemsToShow] = useState(ITEMS_PER_PAGE)
@@ -91,7 +96,7 @@ export function ProductList({ products, categories }: ProductListProps) {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <Heading level={1} className="mb-8">All Products</Heading>
+      <Heading level={1} className="mb-8">{t.products.title}</Heading>
 
       {/* Filters and Controls */}
       <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -99,7 +104,7 @@ export function ProductList({ products, categories }: ProductListProps) {
         <div className="flex-1 md:max-w-md">
           <Input
             type="text"
-            placeholder="Search products..."
+            placeholder={t.products.searchPlaceholder}
             value={searchQuery}
             onChange={(e) => handleSearchChange(e.target.value)}
           />
@@ -111,14 +116,14 @@ export function ProductList({ products, categories }: ProductListProps) {
             htmlFor="category"
             className="text-sm font-medium text-gray-700"
           >
-            Category:
+            {t.products.categoryLabel}
           </label>
           <Select
             id="category"
             value={selectedCategory}
             onChange={(e) => handleCategoryChange(e.target.value)}
           >
-            <option value="all">All Categories</option>
+            <option value="all">{t.products.allCategories}</option>
             {categories.map((category) => (
               <option key={category} value={category}>
                 {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -130,28 +135,31 @@ export function ProductList({ products, categories }: ProductListProps) {
         {/* Sort */}
         <div className="flex items-center gap-2">
           <label htmlFor="sort" className="text-sm font-medium text-gray-700">
-            Sort by:
+            {t.products.sortLabel}
           </label>
           <Select
             id="sort"
             value={sortBy}
             onChange={(e) => handleSortChange(e.target.value)}
           >
-            <option value="default">Default</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="name-asc">Name: A to Z</option>
-            <option value="name-desc">Name: Z to A</option>
-            <option value="rating">Rating</option>
+            <option value="default">{t.products.sortDefault}</option>
+            <option value="price-asc">{t.products.sortPriceAsc}</option>
+            <option value="price-desc">{t.products.sortPriceDesc}</option>
+            <option value="name-asc">{t.products.sortNameAsc}</option>
+            <option value="name-desc">{t.products.sortNameDesc}</option>
+            <option value="rating">{t.products.sortRating}</option>
           </Select>
         </div>
       </div>
 
       {/* Results Count */}
       <Text color="muted" className="mb-4">
-        Showing {displayedProducts.length} of {filteredAndSortedProducts.length}{" "}
-        products
+        {t.products.showingResults
+          .replace("{count}", displayedProducts.length.toString())
+          .replace("{total}", filteredAndSortedProducts.length.toString())}
       </Text>
+
+      
 
       {/* Products Grid */}
       {displayedProducts.length > 0 ? (
@@ -171,7 +179,7 @@ export function ProductList({ products, categories }: ProductListProps) {
                 variant="primary"
                 size="lg"
               >
-                {isLoading ? "Loading..." : "Show More"}
+                {isLoading ? t.products.loading : t.products.showMore}
               </Button>
             </div>
           )}
@@ -188,7 +196,7 @@ export function ProductList({ products, categories }: ProductListProps) {
       ) : (
         <div className="py-12 text-center">
           <Text color="muted">
-            No products found matching your criteria.
+            {t.products.noProducts}
           </Text>
         </div>
       )}

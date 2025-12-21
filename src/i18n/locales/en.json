@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "title": "InfinityElectronics - Your One-Stop Shop",
+    "description": "Discover amazing products at unbeatable prices"
+  },
+  "home": {
+    "featuredProducts": {
+      "title": "Featured Products",
+      "description": "Check out our handpicked selection of amazing products"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "contact": "Contact",
+    "cart": "Cart"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "followUs": "Follow Us",
+    "copyright": "All rights reserved.",
+    "links": {
+      "home": "Home",
+      "products": "Products",
+      "about": "About Us",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "returns": "Returns"
+    }
+  },
+  "product": {
+    "description": "Description",
+    "selectSize": "Select Size",
+    "selectColor": "Select Color",
+    "quantity": "Quantity",
+    "addToCart": "Add to Cart",
+    "addedToCart": "Added to Cart! ✓",
+    "viewCart": "View Cart",
+    "notFound": "Product not found"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "clearCart": "Clear Cart",
+    "emptyTitle": "Your Cart is Empty",
+    "emptyMessage": "Looks like you haven't added anything to your cart yet.",
+    "continueShopping": "Continue Shopping",
+    "loadingCart": "Loading cart...",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingFree": "Free",
+    "tax": "Tax",
+    "total": "Total",
+    "proceedToCheckout": "Proceed to Checkout",
+    "remove": "Remove"
+  },
+  "products": {
+    "title": "All Products",
+    "searchPlaceholder": "Search products...",
+    "categoryLabel": "Category:",
+    "allCategories": "All Categories",
+    "sortLabel": "Sort by:",
+    "sortDefault": "Default",
+    "sortPriceAsc": "Price: Low to High",
+    "sortPriceDesc": "Price: High to Low",
+    "sortNameAsc": "Name: A to Z",
+    "sortNameDesc": "Name: Z to A",
+    "sortRating": "Rating",
+    "showingResults": "Showing {count} of {total} products",
+    "showMore": "Show More",
+    "loading": "Loading...",
+    "noProducts": "No products found matching your criteria."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "seo": {
+    "product": {
+      "titleTemplate": "{productName} - InfinityElectronics",
+      "descriptionTemplate": "Buy {productName} for ${price}. {description}",
+      "imageAlt": "{productName} - Product Image"
+    },
+    "products": {
+      "title": "Shop All Products - InfinityElectronics",
+      "description": "Browse our complete collection of quality products. Find electronics, clothing, jewelry and more at great prices.",
+      "categoryTitle": "{category} - InfinityElectronics",
+      "categoryDescription": "Shop our selection of {category} products. Quality items at competitive prices."
+    },
+    "cart": {
+      "title": "Shopping Cart - InfinityElectronics",
+      "description": "Review your cart and proceed to checkout. Free shipping on orders over $50."
+    },
+    "openGraph": {
+      "siteName": "InfinityElectronics",
+      "type": "website"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Name *",
+      "email": "Email *",
+      "subject": "Subject *",
+      "message": "Message *",
+      "submit": "Send Message",
+      "success": "Message Sent! ✓"
+    }
+  },
+  "pages": {
+    "contact": {
+      "title": "Contact Us",
+      "content": "<div class=\"grid grid-cols-1 gap-8 md:grid-cols-2\"><div><h2 class=\"mb-4 text-2xl font-bold text-gray-900\">Get in Touch</h2><p class=\"mb-6 text-gray-600\">Have a question or feedback? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p><div class=\"space-y-4\"><div class=\"flex items-start gap-3\"><svg class=\"mt-1 h-6 w-6 text-blue-600\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\"/></svg><div><h3 class=\"font-semibold text-gray-900\">Email</h3><p class=\"text-gray-600\">support@InfinityElectronics.com</p></div></div><div class=\"flex items-start gap-3\"><svg class=\"mt-1 h-6 w-6 text-blue-600\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z\"/></svg><div><h3 class=\"font-semibold text-gray-900\">Phone</h3><p class=\"text-gray-600\">+1 (555) 123-4567</p></div></div><div class=\"flex items-start gap-3\"><svg class=\"mt-1 h-6 w-6 text-blue-600\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z\"/><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 11a3 3 0 11-6 0 3 3 0 016 0z\"/></svg><div><h3 class=\"font-semibold text-gray-900\">Address</h3><p class=\"text-gray-600\">123 Store Street<br/>New York, NY 10001</p></div></div></div></div></div>"
+    },
+    "about": {
+      "title": "About Us",
+      "content": "<div class=\"prose prose-lg max-w-none\"><p class=\"mb-6 text-lg text-gray-600\">Welcome to InfinityElectronics, your number one source for all things shopping. We're dedicated to providing you the very best of products, with an emphasis on quality, customer service, and uniqueness.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Our Story</h2><p class=\"mb-6 text-gray-600\">Founded in 2024, InfinityElectronics has come a long way from its beginnings. When we first started out, our passion for providing the best shopping experience drove us to start our own business.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Our Mission</h2><p class=\"mb-6 text-gray-600\">We now serve customers all over the world and are thrilled that we're able to turn our passion into our own website. We hope you enjoy our products as much as we enjoy offering them to you.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Why Choose Us?</h2><ul class=\"mb-6 list-inside list-disc space-y-2 text-gray-600\"><li>Wide selection of quality products</li><li>Competitive prices</li><li>Fast and reliable shipping</li><li>Excellent customer service</li><li>Secure shopping experience</li></ul><p class=\"mb-6 text-gray-600\">If you have any questions or comments, please don't hesitate to contact us.</p></div>"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "content": "<div class=\"prose prose-lg max-w-none\"><p class=\"mb-6 text-sm text-gray-500\">Last updated: December 13, 2025</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Introduction</h2><p class=\"mb-6 text-gray-600\">At InfinityElectronics, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Information We Collect</h2><p class=\"mb-4 text-gray-600\">We may collect information about you in a variety of ways, including:</p><ul class=\"mb-6 list-inside list-disc space-y-2 text-gray-600\"><li>Personal Data: Name, email address, shipping address, and payment information</li><li>Derivative Data: Information our servers automatically collect when you access the site</li><li>Financial Data: Payment information and purchase history</li><li>Mobile Device Data: Device information when you use our mobile application</li></ul><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Use of Your Information</h2><p class=\"mb-4 text-gray-600\">We use the information we collect to:</p><ul class=\"mb-6 list-inside list-disc space-y-2 text-gray-600\"><li>Process your transactions and send you related information</li><li>Send you marketing and promotional communications</li><li>Improve our website and user experience</li><li>Monitor and analyze usage and trends</li><li>Protect against fraudulent or illegal activity</li></ul><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Disclosure of Your Information</h2><p class=\"mb-6 text-gray-600\">We may share information we have collected about you in certain situations. Your information may be disclosed as follows:</p><ul class=\"mb-6 list-inside list-disc space-y-2 text-gray-600\"><li>By Law or to Protect Rights</li><li>Third-Party Service Providers</li><li>Business Transfers</li><li>With Your Consent</li></ul><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Security</h2><p class=\"mb-6 text-gray-600\">We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Cookies</h2><p class=\"mb-6 text-gray-600\">We may use cookies and similar tracking technologies to access or store information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Your Rights</h2><p class=\"mb-6 text-gray-600\">You have the right to access, update, or delete the information we have on you. You may also have the right to restrict or object to certain processing of your data.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Contact Us</h2><p class=\"mb-6 text-gray-600\">If you have questions or comments about this Privacy Policy, please contact us at:</p><p class=\"text-gray-600\">Email: privacy@InfinityElectronics.com<br>Phone: +1 (555) 123-4567<br>Address: 123 Store Street, New York, NY 10001</p></div>"
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "content": "<div class=\"prose prose-lg max-w-none\"><p class=\"mb-6 text-sm text-gray-500\">Last updated: December 13, 2025</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Agreement to Terms</h2><p class=\"mb-6 text-gray-600\">By accessing and using InfinityElectronics, you accept and agree to be bound by the terms and provision of this agreement.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Use License</h2><p class=\"mb-6 text-gray-600\">Permission is granted to temporarily download one copy of the materials on InfinityElectronics's website for personal, non-commercial transitory viewing only.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">User Accounts</h2><p class=\"mb-6 text-gray-600\">When you create an account with us, you must provide information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Prohibited Uses</h2><p class=\"mb-4 text-gray-600\">You may not use our site:</p><ul class=\"mb-6 list-inside list-disc space-y-2 text-gray-600\"><li>In any way that violates any applicable national or international law</li><li>To exploit, harm, or attempt to exploit or harm minors</li><li>To transmit any advertising or promotional material</li><li>To impersonate or attempt to impersonate the Company or another user</li></ul><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Disclaimer</h2><p class=\"mb-6 text-gray-600\">The materials on InfinityElectronics's website are provided on an 'as is' basis. InfinityElectronics makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Limitations</h2><p class=\"mb-6 text-gray-600\">In no event shall InfinityElectronics or its suppliers be liable for any damages arising out of the use or inability to use the materials on InfinityElectronics's website.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Governing Law</h2><p class=\"mb-6 text-gray-600\">These terms and conditions are governed by and construed in accordance with the laws and you irrevocably submit to the exclusive jurisdiction of the courts.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Contact Us</h2><p class=\"text-gray-600\">If you have any questions about these Terms, please contact us at legal@InfinityElectronics.com</p></div>"
+    },
+    "returns": {
+      "title": "Returns & Refunds",
+      "content": "<div class=\"prose prose-lg max-w-none\"><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Return Policy</h2><p class=\"mb-6 text-gray-600\">We want you to be completely satisfied with your purchase. If you're not happy with your order, you can return it within 30 days of delivery for a full refund.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">How to Return an Item</h2><ol class=\"mb-6 list-inside list-decimal space-y-2 text-gray-600\"><li>Contact our customer service team at returns@InfinityElectronics.com</li><li>Provide your order number and reason for return</li><li>Pack the item securely in its original packaging</li><li>Ship the item to the return address provided</li></ol><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Refund Processing</h2><p class=\"mb-6 text-gray-600\">Once we receive your return, we'll inspect the item and process your refund within 5-7 business days. The refund will be issued to your original payment method.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Non-Returnable Items</h2><ul class=\"mb-6 list-inside list-disc space-y-2 text-gray-600\"><li>Personalized or custom-made items</li><li>Perishable goods</li><li>Intimate or sanitary goods</li><li>Items on sale or clearance</li></ul><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Exchanges</h2><p class=\"mb-6 text-gray-600\">We only replace items if they are defective or damaged. If you need to exchange an item, contact us at support@InfinityElectronics.com</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Questions About Returns?</h2><p class=\"text-gray-600\">Contact our customer service team:<br>Email: returns@InfinityElectronics.com<br>Phone: +1 (555) 123-4567</p></div>"
+    }
+  }
+}

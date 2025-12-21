@@ -1,7 +1,17 @@
-import Link from "next/link"
+"use client"
+
+import { useTranslations } from "next-intl"
+import { Link } from "~/i18n/routing-intl"
 import { footerNavigationSections, siteConfig } from "~/data"
 
-export function Footer() {
+interface FooterProps {
+  locale?: string
+}
+
+export function Footer(_props: FooterProps) {
+  const t = useTranslations('footer')
+  const tLinks = useTranslations('footer.links')
+
   return (
     <footer className="border-t border-theme-border bg-theme-muted">
       <div className="container mx-auto px-4 py-12">
@@ -18,15 +28,16 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4 font-semibold text-theme-fg">Quick Links</h4>
+            <h4 className="mb-4 font-semibold text-theme-fg">{t('quickLinks')}</h4>
             <ul className="space-y-2">
               {footerNavigationSections.quickLinks.map((item) => (
-                <li key={item.href}>
+                <li key={item.routeKey}>
                   <Link
-                    href={item.href}
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+                    href={`/${item.routeKey === 'home' ? '' : item.routeKey}` as any}
                     className="text-sm text-theme-muted-fg hover:opacity-80"
                   >
-                    {item.label}
+                    {tLinks(item.routeKey as 'home' | 'products' | 'about' | 'contact')}
                   </Link>
                 </li>
               ))}
@@ -35,15 +46,16 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="mb-4 font-semibold text-theme-fg">Legal</h4>
+            <h4 className="mb-4 font-semibold text-theme-fg">{t('legal')}</h4>
             <ul className="space-y-2">
               {footerNavigationSections.legal.map((item) => (
-                <li key={item.href}>
+                <li key={item.routeKey}>
                   <Link
-                    href={item.href}
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+                    href={`/${item.routeKey}` as any}
                     className="text-sm text-theme-muted-fg hover:opacity-80"
                   >
-                    {item.label}
+                    {tLinks(item.routeKey as 'privacy' | 'terms' | 'returns')}
                   </Link>
                 </li>
               ))}
@@ -52,7 +64,7 @@ export function Footer() {
 
           {/* Social Media */}
           <div>
-            <h4 className="mb-4 font-semibold text-theme-fg">Follow Us</h4>
+            <h4 className="mb-4 font-semibold text-theme-fg">{t('followUs')}</h4>
             <div className="flex gap-4">
               <a
                 href="https://facebook.com"
@@ -106,8 +118,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="mt-8 border-t border-theme-border pt-8 text-center">
           <p className="text-sm text-theme-muted-fg">
-            © {new Date().getFullYear()} InfinityElectronics. All rights
-            reserved.
+            © {new Date().getFullYear()} InfinityElectronics. {t('copyright')}
           </p>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import type { CartItemWithProduct } from "~/types/product"
 import { Button, Text, NumberInput } from "~/elements"
+import { formatPrice } from "~/lib/utils"
 
 interface CartItemProps {
   item: CartItemWithProduct
@@ -54,7 +55,7 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
             )}
           </div>
           <p className="text-lg font-bold text-gray-900">
-            ${item.product.price.toFixed(2)}
+            {formatPrice(item.product.price)}
           </p>
         </div>
 

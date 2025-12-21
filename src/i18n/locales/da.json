@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "title": "InfinityElectronics - Din One-Stop Shop",
+    "description": "Oplev fantastiske produkter til uovertruffen priser"
+  },
+  "home": {
+    "featuredProducts": {
+      "title": "Udvalgte Produkter",
+      "description": "Tjek vores håndplukkede udvalg af fantastiske produkter"
+    }
+  },
+  "navigation": {
+    "home": "Hjem",
+    "products": "Produkter",
+    "about": "Om Os",
+    "contact": "Kontakt",
+    "cart": "Kurv"
+  },
+  "footer": {
+    "quickLinks": "Hurtige Links",
+    "legal": "Juridisk",
+    "followUs": "Følg Os",
+    "copyright": "Alle rettigheder forbeholdes.",
+    "links": {
+      "home": "Hjem",
+      "products": "Produkter",
+      "about": "Om Os",
+      "contact": "Kontakt",
+      "privacy": "Privatlivspolitik",
+      "terms": "Servicevilkår",
+      "returns": "Returnering"
+    }
+  },
+  "product": {
+    "description": "Beskrivelse",
+    "selectSize": "Vælg Størrelse",
+    "selectColor": "Vælg Farve",
+    "quantity": "Antal",
+    "addToCart": "Tilføj til Kurv",
+    "addedToCart": "Tilføjet til Kurv! ✓",
+    "viewCart": "Se Kurv",
+    "notFound": "Produkt ikke fundet"
+  },
+  "cart": {
+    "title": "Indkøbskurv",
+    "clearCart": "Tøm Kurv",
+    "emptyTitle": "Din Kurv er Tom",
+    "emptyMessage": "Det ser ud til, at du ikke har tilføjet noget til din kurv endnu.",
+    "continueShopping": "Fortsæt med at Handle",
+    "loadingCart": "Indlæser kurv...",
+    "orderSummary": "Ordreoversigt",
+    "subtotal": "Subtotal",
+    "shipping": "Forsendelse",
+    "shippingFree": "Gratis",
+    "tax": "Moms",
+    "total": "Total",
+    "proceedToCheckout": "Gå til Betaling",
+    "remove": "Fjern"
+  },
+  "products": {
+    "title": "Alle Produkter",
+    "searchPlaceholder": "Søg produkter...",
+    "categoryLabel": "Kategori:",
+    "allCategories": "Alle Kategorier",
+    "sortLabel": "Sorter efter:",
+    "sortDefault": "Standard",
+    "sortPriceAsc": "Pris: Lav til Høj",
+    "sortPriceDesc": "Pris: Høj til Lav",
+    "sortNameAsc": "Navn: A til Å",
+    "sortNameDesc": "Navn: Å til A",
+    "sortRating": "Bedømmelse",
+    "showingResults": "Viser {count} af {total} produkter",
+    "showMore": "Vis Flere",
+    "loading": "Indlæser...",
+    "noProducts": "Ingen produkter fundet, der matcher dine kriterier."
+  },
+  "common": {
+    "loading": "Indlæser...",
+    "error": "Der opstod en fejl",
+    "success": "Succes!",
+    "save": "Gem",
+    "cancel": "Annuller",
+    "delete": "Slet",
+    "edit": "Rediger",
+    "confirm": "Bekræft",
+    "close": "Luk",
+    "back": "Tilbage",
+    "next": "Næste",
+    "previous": "Forrige",
+    "yes": "Ja",
+    "no": "Nej"
+  },
+  "seo": {
+    "product": {
+      "titleTemplate": "{productName} - InfinityElectronics",
+      "descriptionTemplate": "Køb {productName} for ${price}. {description}",
+      "imageAlt": "{productName} - Produktbillede"
+    },
+    "products": {
+      "title": "Shop Alle Produkter - InfinityElectronics",
+      "description": "Gennemse vores komplette samling af kvalitetsprodukter. Find elektronik, tøj, smykker og meget mere til gode priser.",
+      "categoryTitle": "{category} - InfinityElectronics",
+      "categoryDescription": "Shop vores udvalg af {category} produkter. Kvalitetsvarer til konkurrencedygtige priser."
+    },
+    "cart": {
+      "title": "Indkøbskurv - InfinityElectronics",
+      "description": "Gennemse din kurv og fortsæt til kassen. Gratis fragt på ordrer over $50."
+    },
+    "openGraph": {
+      "siteName": "InfinityElectronics",
+      "type": "website"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Navn *",
+      "email": "E-mail *",
+      "subject": "Emne *",
+      "message": "Besked *",
+      "submit": "Send Besked",
+      "success": "Besked Sendt! ✓"
+    }
+  },
+  "pages": {
+    "contact": {
+      "title": "Kontakt Os",
+      "content": "<div class=\"grid grid-cols-1 gap-8 md:grid-cols-2\"><div><h2 class=\"mb-4 text-2xl font-bold text-gray-900\">Kom i Kontakt</h2><p class=\"mb-6 text-gray-600\">Har du et spørgsmål eller feedback? Vi vil elske at høre fra dig. Send os en besked, og vi vil svare så hurtigt som muligt.</p><div class=\"space-y-4\"><div class=\"flex items-start gap-3\"><svg class=\"mt-1 h-6 w-6 text-blue-600\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\"/></svg><div><h3 class=\"font-semibold text-gray-900\">E-mail</h3><p class=\"text-gray-600\">support@InfinityElectronics.com</p></div></div><div class=\"flex items-start gap-3\"><svg class=\"mt-1 h-6 w-6 text-blue-600\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z\"/></svg><div><h3 class=\"font-semibold text-gray-900\">Telefon</h3><p class=\"text-gray-600\">+1 (555) 123-4567</p></div></div><div class=\"flex items-start gap-3\"><svg class=\"mt-1 h-6 w-6 text-blue-600\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z\"/><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 11a3 3 0 11-6 0 3 3 0 016 0z\"/></svg><div><h3 class=\"font-semibold text-gray-900\">Adresse</h3><p class=\"text-gray-600\">123 Store Street<br/>New York, NY 10001</p></div></div></div></div></div>"
+    },
+    "about": {
+      "title": "Om Os",
+      "content": "<div class=\"prose prose-lg max-w-none\"><p class=\"mb-6 text-lg text-gray-600\">Velkommen til InfinityElectronics, din nummer ét kilde til alt inden for shopping. Vi er dedikeret til at give dig det bedste af produkter med vægt på kvalitet, kundeservice og unikhed.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Vores Historie</h2><p class=\"mb-6 text-gray-600\">Grundlagt i 2024 har InfinityElectronics tilbagelagt en lang vej fra begyndelsen. Da vi først startede, var vores passion for at levere den bedste shoppingoplevelse drivkraften bag vores egen virksomhed.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Vores Mission</h2><p class=\"mb-6 text-gray-600\">Vi betjener nu kunder over hele verden og er begejstrede for at kunne gøre vores passion til vores egen hjemmeside. Vi håber, du nyder vores produkter lige så meget, som vi nyder at tilbyde dem til dig.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Hvorfor Vælge Os?</h2><ul class=\"mb-6 list-inside list-disc space-y-2 text-gray-600\"><li>Bredt udvalg af kvalitetsprodukter</li><li>Konkurrencedygtige priser</li><li>Hurtig og pålidelig forsendelse</li><li>Fremragende kundeservice</li><li>Sikker shoppingoplevelse</li></ul><p class=\"mb-6 text-gray-600\">Hvis du har spørgsmål eller kommentarer, så tøv ikke med at kontakte os.</p></div>"
+    },
+    "privacy": {
+      "title": "Privatlivspolitik",
+      "content": "<div class=\"prose prose-lg max-w-none\"><p class=\"mb-6 text-sm text-gray-500\">Sidst opdateret: 13. december 2025</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Introduktion</h2><p class=\"mb-6 text-gray-600\">Hos InfinityElectronics tager vi dit privatliv alvorligt. Denne privatlivspolitik forklarer, hvordan vi indsamler, bruger, videregiver og beskytter dine oplysninger, når du besøger vores hjemmeside.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Oplysninger Vi Indsamler</h2><p class=\"mb-4 text-gray-600\">Vi kan indsamle oplysninger om dig på forskellige måder, herunder:</p><ul class=\"mb-6 list-inside list-disc space-y-2 text-gray-600\"><li>Personlige data: Navn, e-mailadresse, leveringsadresse og betalingsoplysninger</li><li>Afledte data: Oplysninger vores servere automatisk indsamler, når du besøger siden</li><li>Finansielle data: Betalingsoplysninger og købshistorik</li><li>Mobilenheds data: Enhedsoplysninger, når du bruger vores mobilapplikation</li></ul><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Brug af Dine Oplysninger</h2><p class=\"mb-4 text-gray-600\">Vi bruger de oplysninger, vi indsamler til at:</p><ul class=\"mb-6 list-inside list-disc space-y-2 text-gray-600\"><li>Behandle dine transaktioner og sende dig relaterede oplysninger</li><li>Sende dig marketing- og reklamekommunikation</li><li>Forbedre vores hjemmeside og brugeroplevelse</li><li>Overvåge og analysere brug og tendenser</li><li>Beskytte mod svindel eller ulovlig aktivitet</li></ul><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Videregivelse af Dine Oplysninger</h2><p class=\"mb-6 text-gray-600\">Vi kan dele oplysninger, vi har indsamlet om dig i visse situationer. Dine oplysninger kan blive videregivet som følger:</p><ul class=\"mb-6 list-inside list-disc space-y-2 text-gray-600\"><li>Ved lov eller for at beskytte rettigheder</li><li>Tredjepartsudbydere</li><li>Virksomhedsoverdragelser</li><li>Med dit samtykke</li></ul><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Sikkerhed</h2><p class=\"mb-6 text-gray-600\">Vi bruger administrative, tekniske og fysiske sikkerhedsforanstaltninger til at hjælpe med at beskytte dine personlige oplysninger. Selvom vi har taget rimelige skridt til at sikre de personlige oplysninger, du giver os, skal du være opmærksom på, at på trods af vores indsats er ingen sikkerhedsforanstaltninger perfekte eller uigennemtrængelige.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Cookies</h2><p class=\"mb-6 text-gray-600\">Vi kan bruge cookies og lignende sporingsteknologier til at få adgang til eller gemme oplysninger. Du kan instruere din browser til at afvise alle cookies eller indikere, når en cookie bliver sendt.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Dine Rettigheder</h2><p class=\"mb-6 text-gray-600\">Du har ret til at få adgang til, opdatere eller slette de oplysninger, vi har om dig. Du kan også have ret til at begrænse eller gøre indsigelse mod visse behandlinger af dine data.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Kontakt Os</h2><p class=\"mb-6 text-gray-600\">Hvis du har spørgsmål eller kommentarer til denne privatlivspolitik, bedes du kontakte os på:</p><p class=\"text-gray-600\">E-mail: privacy@InfinityElectronics.com<br>Telefon: +1 (555) 123-4567<br>Adresse: 123 Store Street, New York, NY 10001</p></div>"
+    },
+    "terms": {
+      "title": "Servicevilkår",
+      "content": "<div class=\"prose prose-lg max-w-none\"><p class=\"mb-6 text-sm text-gray-500\">Sidst opdateret: 13. december 2025</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Aftale om Vilkår</h2><p class=\"mb-6 text-gray-600\">Ved at få adgang til og bruge InfinityElectronics accepterer og indvilliger du i at være bundet af vilkårene og bestemmelserne i denne aftale.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Brugslicens</h2><p class=\"mb-6 text-gray-600\">Der gives tilladelse til midlertidigt at downloade én kopi af materialerne på InfinityElectronics' hjemmeside til personlig, ikke-kommerciel midlertidig visning.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Brugerkonti</h2><p class=\"mb-6 text-gray-600\">Når du opretter en konto hos os, skal du give oplysninger, der er nøjagtige, komplette og aktuelle til enhver tid. Manglende overholdelse heraf udgør et brud på vilkårene.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Forbudt Brug</h2><p class=\"mb-4 text-gray-600\">Du må ikke bruge vores side til:</p><ul class=\"mb-6 list-inside list-disc space-y-2 text-gray-600\"><li>På nogen måde, der overtræder gældende national eller international lovgivning</li><li>At udnytte, skade eller forsøge at udnytte eller skade mindreårige</li><li>At transmittere reklame- eller salgsfremmende materiale</li><li>At efterligne eller forsøge at efterligne virksomheden eller en anden bruger</li></ul><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Ansvarsfraskrivelse</h2><p class=\"mb-6 text-gray-600\">Materialerne på InfinityElectronics' hjemmeside leveres 'som de er'. InfinityElectronics afgiver ingen garantier, udtrykkelige eller underforståede, og fraskriver sig og nægter hermed alle andre garantier.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Begrænsninger</h2><p class=\"mb-6 text-gray-600\">Under ingen omstændigheder skal InfinityElectronics eller dets leverandører være ansvarlige for eventuelle skader, der opstår som følge af brug eller manglende evne til at bruge materialerne på InfinityElectronics' hjemmeside.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Gældende Lov</h2><p class=\"mb-6 text-gray-600\">Disse vilkår og betingelser er underlagt og fortolkes i overensstemmelse med lovene, og du underkaster dig uigenkaldeligt domstolenes eksklusive jurisdiktion.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Kontakt Os</h2><p class=\"text-gray-600\">Hvis du har spørgsmål til disse vilkår, bedes du kontakte os på legal@InfinityElectronics.com</p></div>"
+    },
+    "returns": {
+      "title": "Returnering & Refusion",
+      "content": "<div class=\"prose prose-lg max-w-none\"><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Returneringspolitik</h2><p class=\"mb-6 text-gray-600\">Vi ønsker, at du skal være fuldstændig tilfreds med dit køb. Hvis du ikke er glad for din ordre, kan du returnere den inden for 30 dage efter levering for en fuld refusion.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Sådan Returnerer Du en Vare</h2><ol class=\"mb-6 list-inside list-decimal space-y-2 text-gray-600\"><li>Kontakt vores kundeserviceteam på returns@InfinityElectronics.com</li><li>Angiv dit ordrenummer og årsag til returnering</li><li>Pak varen sikkert i den originale emballage</li><li>Send varen til den angivne returadresse</li></ol><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Behandling af Refusion</h2><p class=\"mb-6 text-gray-600\">Når vi modtager din returnering, vil vi inspicere varen og behandle din refusion inden for 5-7 hverdage. Refusionen vil blive udstedt til din oprindelige betalingsmetode.</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Ikke-Returnerbare Varer</h2><ul class=\"mb-6 list-inside list-disc space-y-2 text-gray-600\"><li>Personlige eller specialfremstillede varer</li><li>Letfordærvelige varer</li><li>Intime eller sanitære varer</li><li>Varer på udsalg eller clearance</li></ul><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Ombytninger</h2><p class=\"mb-6 text-gray-600\">Vi erstatter kun varer, hvis de er defekte eller beskadigede. Hvis du har brug for at ombytte en vare, kontakt os på support@InfinityElectronics.com</p><h2 class=\"mt-8 mb-4 text-2xl font-bold text-gray-900\">Spørgsmål Om Returnering?</h2><p class=\"text-gray-600\">Kontakt vores kundeserviceteam:<br>E-mail: returns@InfinityElectronics.com<br>Telefon: +1 (555) 123-4567</p></div>"
+    }
+  }
+}

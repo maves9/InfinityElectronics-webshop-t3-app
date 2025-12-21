@@ -12,6 +12,7 @@ export type { HeroSlide } from "./Hero"
 // Cart Components
 export { CartContent } from "./CartContent"
 export { CartItem } from "./CartItem"
+export { ContactForm } from "./ContactForm"
 export { EmptyCart } from "./EmptyCart"
 export { OrderSummary } from "./OrderSummary"
 
@@ -26,3 +27,4 @@ export { ProductDetailClient } from "./ProductDetailClient"
 export { Navigation } from "./Navigation"
 export { Footer } from "./Footer"
 export { ThemeSwitcher } from "./ThemeSwitcher"
+export { LanguageSwitcher } from "./LanguageSwitcher"

@@ -1,47 +1,53 @@
-import Link from "next/link"
+"use client"
+
+import { useTranslations } from "next-intl"
+import { Link } from "~/i18n/routing-intl"
 import { Button, Heading } from "~/elements"
+import { formatPrice } from "~/lib/utils"
 
 interface OrderSummaryProps {
   total: number
 }
 
 export function OrderSummary({ total }: OrderSummaryProps) {
+  const t = useTranslations('cart')
+
   return (
     <div className="lg:col-span-1">
       <div className="border border-gray-200 bg-white p-6">
         <Heading level={2} size="xl" className="mb-4">
-          Order Summary
+          {t('orderSummary')}
         </Heading>
 
         <div className="space-y-3 border-b border-gray-200 pb-4">
           <div className="flex justify-between text-gray-600">
-            <span>Subtotal</span>
-            <span>${total.toFixed(2)}</span>
+            <span>{t('subtotal')}</span>
+            <span>{formatPrice(total)}</span>
           </div>
           <div className="flex justify-between text-gray-600">
-            <span>Shipping</span>
-            <span>Free</span>
+            <span>{t('shipping')}</span>
+            <span>{t('shippingFree')}</span>
           </div>
           <div className="flex justify-between text-gray-600">
-            <span>Tax</span>
-            <span>${(total * 0.1).toFixed(2)}</span>
+            <span>{t('tax')}</span>
+            <span>{formatPrice(total * 0.1)}</span>
           </div>
         </div>
 
         <div className="mt-4 flex justify-between text-xl font-bold text-gray-900">
-          <span>Total</span>
-          <span>${(total * 1.1).toFixed(2)}</span>
+          <span>{t('total')}</span>
+          <span>{formatPrice(total * 1.1)}</span>
         </div>
 
         <Button variant="primary" size="lg" fullWidth className="mt-6">
-          Proceed to Checkout
+          {t('proceedToCheckout')}
         </Button>
 
         <Link
           href="/products"
           className="mt-4 block text-center text-sm text-blue-600 hover:text-blue-700"
         >
-          Continue Shopping
+          {t('continueShopping')}
         </Link>
       </div>
     </div>

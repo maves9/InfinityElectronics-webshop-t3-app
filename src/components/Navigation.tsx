@@ -1,14 +1,21 @@
 "use client"
 
-import Link from "next/link"
+import { useTranslations } from "next-intl"
+import { Link } from "~/i18n/routing-intl"
 import { useState } from "react"
 import { useCartStore } from "~/stores/cartStore"
 import { ThemeSwitcher } from "./ThemeSwitcher"
+import { LanguageSwitcher } from "./LanguageSwitcher"
 import { mainNavigationItems, siteConfig } from "~/data"
 
-export function Navigation() {
+interface NavigationProps {
+  locale: string
+}
+
+export function Navigation({ locale }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const totalItems = useCartStore((state) => state.totalItems)
+  const t = useTranslations('navigation')
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
@@ -17,25 +24,34 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href={siteConfig.logo.href} className="text-2xl font-bold text-theme-primary">
+          <Link 
+            href="/" 
+            className="text-2xl font-bold text-theme-primary"
+          >
             {siteConfig.logo.text}
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 md:flex">
-            {mainNavigationItems.filter(item => item.href !== '/').map((item) => (
+            {mainNavigationItems.filter(item => item.routeKey !== 'home').map((item) => (
               <Link
-                key={item.href}
-                href={item.href}
+                key={item.routeKey}
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+                href={`/${item.routeKey}` as any}
                 className="text-theme-fg transition-colors hover:opacity-80"
               >
-                {item.label}
+                {t(item.routeKey as 'products' | 'about' | 'contact' | 'cart')}
               </Link>
             ))}
           </div>
 
           {/* Cart & Mobile Menu Button */}
           <div className="flex items-center gap-4">
+            {/* Language Switcher - Desktop */}
+            <div className="hidden md:block">
+              <LanguageSwitcher />
+            </div>
+
             {/* Theme Switcher - Desktop */}
             <div className="hidden md:block">
               <ThemeSwitcher />
@@ -101,15 +117,17 @@ export function Navigation() {
             <div className="flex flex-col gap-4">
               {mainNavigationItems.map((item) => (
                 <Link
-                  key={item.href}
-                  href={item.href}
+                  key={item.routeKey}
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+                  href={`/${item.routeKey === 'home' ? '' : item.routeKey}` as any}
                   className="text-theme-fg transition-colors hover:opacity-80"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.label}
+                  {t(item.routeKey as 'home' | 'products' | 'about' | 'contact' | 'cart')}
                 </Link>
               ))}
-              <div className="pt-2">
+              <div className="pt-2 space-y-4">
+                <LanguageSwitcher />
                 <ThemeSwitcher />
               </div>
             </div>

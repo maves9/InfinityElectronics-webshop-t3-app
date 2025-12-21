@@ -1,5 +1,6 @@
 "use client"
 
+import { useParams } from "next/navigation"
 import { useCartStore } from "~/stores/cartStore"
 import { useQueries } from "@tanstack/react-query"
 import type { CartItemWithProduct } from "~/types/product"
@@ -8,8 +9,12 @@ import { CartItem } from "./CartItem"
 import { OrderSummary } from "./OrderSummary"
 import { EmptyCart } from "./EmptyCart"
 import { Button, Heading } from "~/elements"
+import { translations, type Locale } from "~/i18n"
 
 export function CartContent() {
+  const params = useParams()
+  const locale = params.locale as Locale
+  const t = translations[locale]
   const cart = useCartStore((state) => state.cart)
   const removeFromCart = useCartStore((state) => state.removeFromCart)
   const updateQuantity = useCartStore((state) => state.updateQuantity)
@@ -53,7 +58,7 @@ export function CartContent() {
         <div className="mx-auto max-w-2xl text-center">
           <div className="flex items-center justify-center gap-3">
             <div className="h-6 w-6 animate-spin border-2 border-gray-300 border-t-blue-600" />
-            <span className="text-gray-600">Loading cart...</span>
+            <span className="text-gray-600">{t.cart.loadingCart}</span>
           </div>
         </div>
       </div>
@@ -63,14 +68,14 @@ export function CartContent() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8 flex items-center justify-between">
-        <Heading level={1}>Shopping Cart</Heading>
+        <Heading level={1}>{t.cart.title}</Heading>
         <Button
           onClick={clearCart}
           variant="ghost"
           size="sm"
           className="text-red-600 hover:text-red-700"
         >
-          Clear Cart
+          {t.cart.clearCart}
         </Button>
       </div>
 

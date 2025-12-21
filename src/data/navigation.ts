@@ -1,47 +1,49 @@
 export interface NavigationItem {
   label: string
-  href: string
+  routeKey: string // Route key for i18n routing
   icon?: string
 }
 
 /**
  * Main navigation items
  * These can be stored in a database and managed via CMS in the future
+ * routeKey is used to generate localized URLs via the i18n routing system
  */
 export const mainNavigationItems: NavigationItem[] = [
   {
     label: "Home",
-    href: "/",
+    routeKey: "home",
   },
   {
     label: "Products",
-    href: "/products",
+    routeKey: "products",
   },
   {
     label: "About Us",
-    href: "/about",
+    routeKey: "about",
   },
   {
     label: "Contact",
-    href: "/contact",
+    routeKey: "contact",
   },
 ]
 
 /**
  * Footer navigation sections
  * These can be stored in a database for easy content management
+ * routeKey is used for internal routes, href is used for external links
  */
 export const footerNavigationSections = {
   quickLinks: [
-    { label: "Home", href: "/" },
-    { label: "Products", href: "/products" },
-    { label: "About Us", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Home", routeKey: "home" },
+    { label: "Products", routeKey: "products" },
+    { label: "About Us", routeKey: "about" },
+    { label: "Contact", routeKey: "contact" },
   ],
   legal: [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
-    { label: "Returns", href: "/returns" },
+    { label: "Privacy Policy", routeKey: "privacy" },
+    { label: "Terms of Service", routeKey: "terms" },
+    { label: "Returns", routeKey: "returns" },
   ],
   social: [
     { label: "Facebook", href: "https://facebook.com", icon: "facebook" },
@@ -59,6 +61,6 @@ export const siteConfig = {
   tagline: "Your one-stop shop for quality products at great prices.",
   logo: {
     text: "InfinityElectronics",
-    href: "/",
+    routeKey: "home",
   },
 }

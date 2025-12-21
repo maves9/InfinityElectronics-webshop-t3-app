@@ -1,6 +1,9 @@
-import Link from "next/link"
+"use client"
+
+import { Link } from "~/i18n/routing-intl"
 import Image from "next/image"
 import type { Product } from "~/types/product"
+import { formatPrice } from "~/lib/utils"
 
 interface ProductCardProps {
   product: Product
@@ -10,10 +13,9 @@ interface ProductCardProps {
 export function ProductCard({ product, priority = false }: ProductCardProps) {
   return (
     <Link
-      href={`/products/${product.id}`}
+      href={{ pathname: "/products/[id]", params: { id: product.id.toString() } }}
       className="product-card group flex flex-col overflow-hidden border border-theme-border bg-theme-card shadow-sm transition-all hover:shadow-lg"
     >
-      {/* Product Image */}
       <div className="product-card-image relative aspect-square w-full overflow-hidden bg-theme-muted">
         <Image
           src={product.image}
@@ -25,19 +27,15 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
         />
       </div>
 
-      {/* Product Info */}
       <div className="flex flex-1 flex-col p-4">
-        {/* Category */}
         <p className="mb-1 text-xs uppercase text-theme-muted-fg">
           {product.category}
         </p>
 
-        {/* Title */}
         <h3 className="mb-2 line-clamp-2 text-sm font-semibold text-theme-card-fg group-hover:opacity-80">
           {product.title}
         </h3>
 
-        {/* Rating */}
         <div className="mb-2 flex items-center gap-1">
           <div className="flex">
             {Array.from({ length: 5 }).map((_, i) => (
@@ -56,10 +54,9 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           </span>
         </div>
 
-        {/* Price */}
         <div className="mt-auto">
           <p className="text-lg font-bold text-theme-primary">
-            ${product.price.toFixed(2)}
+            {formatPrice(product.price)}
           </p>
         </div>
       </div>
