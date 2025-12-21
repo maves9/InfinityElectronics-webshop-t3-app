@@ -3,10 +3,11 @@ import { type Metadata } from "next"
 import { notFound } from "next/navigation"
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
-import { routing } from '~/i18n/routing-intl'
+import { routing, type Locale } from '~/i18n/routing-intl'
 import { Navigation } from "~/components/Navigation"
 import { Footer } from "~/components/Footer"
 import { generateOrganizationJsonLd } from "~/lib/seo"
+import type { Messages } from "~/types/messages"
 
 export async function generateMetadata({
   params,
@@ -14,10 +15,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const messages = (await getMessages({ locale })) as {
-    metadata: { title: string; description: string }
-    seo: { openGraph: { siteName: string } }
-  }
+  const messages = await getMessages({ locale }) as Messages
 
   return {
     title: messages.metadata.title,
@@ -51,12 +49,10 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params
   
-  // Validate that the incoming locale is valid
-  if (!routing.locales.includes(locale as 'en' | 'da')) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound()
   }
 
-  // Enable static rendering
   const messages = await getMessages({ locale })
   const organizationJsonLd = generateOrganizationJsonLd()
 
@@ -66,9 +62,9 @@ export default async function LocaleLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
-      <Navigation locale={locale} />
+      <Navigation />
       <main className="flex-1">{children}</main>
-      <Footer locale={locale} />
+      <Footer />
     </NextIntlClientProvider>
   )
 }

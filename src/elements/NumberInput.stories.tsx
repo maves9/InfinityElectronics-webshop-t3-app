@@ -41,11 +41,14 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  render: (args) => {
+  render: () => {
     const [value, setValue] = useState(1)
     return <NumberInput value={value} onChange={setValue} label="Quantity" />
   },
-  args: {} as any,
+  args: {
+    value: 1,
+    onChange: () => {},
+  },
 }
 
 export const WithMinMax: Story = {

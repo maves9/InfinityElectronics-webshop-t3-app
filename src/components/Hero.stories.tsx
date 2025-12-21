@@ -13,12 +13,10 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  args: {} as any,
-}
+export const Default: Story = {}
 
 export const WithDescription: Story = {
-  render: (args) => (
+  render: () => (
     <div className="min-h-screen">
       <Hero />
       <div className="container mx-auto px-4 py-8">
@@ -29,5 +27,4 @@ export const WithDescription: Story = {
       </div>
     </div>
   ),
-  args: {} as any,
 }

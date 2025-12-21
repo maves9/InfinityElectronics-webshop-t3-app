@@ -1,12 +1,8 @@
 import { useTranslations } from "next-intl"
-import { Link } from "~/i18n/routing-intl"
+import { Link, routeKeyToHref } from "~/i18n/routing-intl"
 import { footerNavigationSections, siteConfig } from "~/data"
 
-interface FooterProps {
-  locale?: string
-}
-
-export function Footer(_props: FooterProps) {
+export function Footer() {
   const t = useTranslations('footer')
   const tLinks = useTranslations('footer.links')
 
@@ -14,7 +10,6 @@ export function Footer(_props: FooterProps) {
     <footer className="border-t border-theme-border bg-theme-muted">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-          {/* Company Info */}
           <div>
             <h3 className="mb-4 text-lg font-bold text-theme-fg">
               {siteConfig.name}
@@ -24,43 +19,38 @@ export function Footer(_props: FooterProps) {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="mb-4 font-semibold text-theme-fg">{t('quickLinks')}</h4>
             <ul className="space-y-2">
               {footerNavigationSections.quickLinks.map((item) => (
                 <li key={item.routeKey}>
                   <Link
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
-                    href={`/${item.routeKey === 'home' ? '' : item.routeKey}` as any}
+                    href={routeKeyToHref(item.routeKey)}
                     className="text-sm text-theme-muted-fg hover:opacity-80"
                   >
-                    {tLinks(item.routeKey as 'home' | 'products' | 'about' | 'contact')}
+                    {tLinks(item.routeKey)}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
             <h4 className="mb-4 font-semibold text-theme-fg">{t('legal')}</h4>
             <ul className="space-y-2">
               {footerNavigationSections.legal.map((item) => (
                 <li key={item.routeKey}>
                   <Link
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
-                    href={`/${item.routeKey}` as any}
+                    href={routeKeyToHref(item.routeKey)}
                     className="text-sm text-theme-muted-fg hover:opacity-80"
                   >
-                    {tLinks(item.routeKey as 'privacy' | 'terms' | 'returns')}
+                    {tLinks(item.routeKey)}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Social Media */}
           <div>
             <h4 className="mb-4 font-semibold text-theme-fg">{t('followUs')}</h4>
             <div className="flex gap-4">
@@ -113,7 +103,6 @@ export function Footer(_props: FooterProps) {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="mt-8 border-t border-theme-border pt-8 text-center">
           <p className="text-sm text-theme-muted-fg">
             © {new Date().getFullYear()} InfinityElectronics. {t('copyright')}

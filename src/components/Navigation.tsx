@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl"
-import { Link } from "~/i18n/routing-intl"
+import { Link, routeKeyToHref } from "~/i18n/routing-intl"
 import { ThemeSwitcher } from "./ThemeSwitcher"
 import { LanguageSwitcher } from "./LanguageSwitcher"
 import { MobileMenu } from "./MobileMenu"
@@ -20,16 +20,14 @@ export function Navigation() {
             {siteConfig.logo.text}
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden items-center gap-8 md:flex">
             {mainNavigationItems.filter(item => item.routeKey !== 'home').map((item) => (
               <Link
                 key={item.routeKey}
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
-                href={`/${item.routeKey}` as any}
+                href={routeKeyToHref(item.routeKey)}
                 className="text-theme-fg transition-colors hover:opacity-80"
               >
-                {t(item.routeKey as 'products' | 'about' | 'contact' | 'cart')}
+                {t(item.routeKey)}
               </Link>
             ))}
           </div>

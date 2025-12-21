@@ -13,12 +13,10 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  args: {} as any,
-}
+export const Default: Story = {}
 
 export const InContext: Story = {
-  render: (args) => (
+  render: () => (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b py-4">
         <div className="container mx-auto px-4">
@@ -28,5 +26,4 @@ export const InContext: Story = {
       <EmptyCart />
     </div>
   ),
-  args: {} as any,
 }

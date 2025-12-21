@@ -1,7 +1,7 @@
 "use client"
 
 import { useLocale } from 'next-intl'
-import { usePathname as useNextPathname, useParams } from 'next/navigation'
+import { usePathname as useNextPathname } from 'next/navigation'
 import { routing } from '~/i18n/routing-intl'
 import NextLink from 'next/link'
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { Link } from "~/i18n/routing-intl"
+import { Link, routeKeyToHref } from "~/i18n/routing-intl"
 import { mainNavigationItems } from "~/data"
 import { ThemeSwitcher } from "./ThemeSwitcher"
 import { LanguageSwitcher } from "./LanguageSwitcher"
@@ -50,12 +50,11 @@ export function MobileMenu() {
             {mainNavigationItems.map((item) => (
               <Link
                 key={item.routeKey}
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
-                href={`/${item.routeKey === 'home' ? '' : item.routeKey}` as any}
+                href={routeKeyToHref(item.routeKey)}
                 className="text-theme-fg transition-colors hover:opacity-80"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t(item.routeKey as 'home' | 'products' | 'about' | 'contact' | 'cart')}
+                {t(item.routeKey)}
               </Link>
             ))}
             <div className="pt-2 space-y-4">

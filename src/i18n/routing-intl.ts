@@ -1,17 +1,11 @@
 import { defineRouting } from 'next-intl/routing';
 import { createNavigation } from 'next-intl/navigation';
+import type { MainRouteKey, LegalRouteKey } from '~/data/navigation';
 
 export const routing = defineRouting({
-  // A list of all locales that are supported
-  locales: ['en', 'da'],
- 
-  // Used when no locale matches
+  locales: ['en', 'da'] as const,
   defaultLocale: 'en',
-  
-  // Prefix strategy for locales
   localePrefix: 'always',
-  
-  // Pathnames for localized routes
   pathnames: {
     '/': '/',
     '/products': {
@@ -49,7 +43,14 @@ export const routing = defineRouting({
   }
 });
 
-// Lightweight wrappers around Next.js' navigation APIs
-// that will consider the routing configuration
 export const { Link, redirect, usePathname, useRouter } =
   createNavigation(routing);
+
+// Type exports
+export type Locale = (typeof routing.locales)[number];
+type Pathname = Exclude<keyof typeof routing.pathnames, '/products/[id]'>;
+
+export function routeKeyToHref(routeKey: MainRouteKey | LegalRouteKey): Pathname {
+  if (routeKey === 'home') return '/';
+  return `/${routeKey}` as Pathname;
+}

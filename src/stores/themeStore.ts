@@ -15,7 +15,7 @@ export const useThemeStore = create<ThemeState>()(
   persist(
     (set) => ({
       currentTheme: themes.default,
-      themeName: 'default' as ThemeName,
+      themeName: 'default' satisfies ThemeName,
       availableThemes: Object.values(themes),
       setTheme: (newThemeName) => {
         if (themes[newThemeName]) {

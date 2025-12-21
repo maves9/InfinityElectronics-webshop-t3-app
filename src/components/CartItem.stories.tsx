@@ -28,7 +28,7 @@ const sampleProduct = {
 }
 
 export const Default: Story = {
-  render: (args) => {
+  render: () => {
     const [quantity, setQuantity] = useState(1)
     return (
       <div className="w-full max-w-2xl bg-white p-4">
@@ -44,11 +44,15 @@ export const Default: Story = {
       </div>
     )
   },
-  args: {} as any,
+  args: {
+    item: { productId: 1, quantity: 1, product: sampleProduct },
+    onRemove: () => {},
+    onUpdateQuantity: () => {},
+  },
 }
 
 export const WithOptions: Story = {
-  render: (args) => {
+  render: () => {
     const [quantity, setQuantity] = useState(2)
     return (
       <div className="w-full max-w-2xl bg-white p-4">
@@ -66,11 +70,15 @@ export const WithOptions: Story = {
       </div>
     )
   },
-  args: {} as any,
+  args: {
+    item: { productId: 1, quantity: 2, product: sampleProduct },
+    onRemove: () => {},
+    onUpdateQuantity: () => {},
+  },
 }
 
 export const MultipleItems: Story = {
-  render: (args) => {
+  render: () => {
     const [qty1, setQty1] = useState(1)
     const [qty2, setQty2] = useState(3)
     const [qty3, setQty3] = useState(1)
@@ -120,7 +128,11 @@ export const MultipleItems: Story = {
       </div>
     )
   },
-  args: {} as any,
+  args: {
+    item: { productId: 1, quantity: 1, product: sampleProduct },
+    onRemove: () => {},
+    onUpdateQuantity: () => {},
+  },
   parameters: {
     layout: "padded",
   },
