@@ -1,6 +1,8 @@
-import { getAllProducts, getCategories } from "~/lib/api"
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query"
 import { ProductList } from "~/components/ProductList"
 import { translations } from "~/i18n"
+import { getQueryClient } from "~/lib/getQueryClient"
+import { productQueries, categoryQueries } from "~/lib/queries"
 import type { Metadata } from "next"
 import type { Locale } from "~/i18n/config"
 
@@ -49,10 +51,20 @@ export default async function ProductsPage({
   params,
 }: ProductsPageProps) {
   const { locale } = await params
-  const [products, categories] = await Promise.all([
-    getAllProducts(),
-    getCategories(),
+  const queryClient = getQueryClient()
+
+  // Prefetch products and categories in parallel
+  await Promise.all([
+    queryClient.prefetchQuery(productQueries.all()),
+    queryClient.prefetchQuery(categoryQueries.all()),
   ])
 
-  return <ProductList products={products} categories={categories} locale={locale} />
+  const products = queryClient.getQueryData(productQueries.all().queryKey) ?? []
+  const categories = queryClient.getQueryData(categoryQueries.all().queryKey) ?? []
+
+  return (
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <ProductList products={products} categories={categories} locale={locale} />
+    </HydrationBoundary>
+  )
 }

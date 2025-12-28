@@ -4,7 +4,7 @@ import { useParams } from "next/navigation"
 import { useCartStore } from "~/stores/cartStore"
 import { useQueries } from "@tanstack/react-query"
 import type { CartItemWithProduct } from "~/types/product"
-import { getProduct } from "~/lib/api"
+import { productQueries } from "~/lib/queries"
 import { CartItem } from "./CartItem"
 import { OrderSummary } from "./OrderSummary"
 import { EmptyCart } from "./EmptyCart"
@@ -20,21 +20,17 @@ export function CartContent() {
   const updateQuantity = useCartStore((state) => state.updateQuantity)
   const clearCart = useCartStore((state) => state.clearCart)
 
-  // Fetch product data for all cart items using TanStack Query
-  const productQueries = useQueries({
-    queries: cart.items.map((item) => ({
-      queryKey: ["product", item.productId],
-      queryFn: () => getProduct(item.productId),
-      staleTime: 5 * 60 * 1000, // 5 minutes
-    })),
+  // Fetch product data for all cart items using centralized query config
+  const cartProductQueries = useQueries({
+    queries: cart.items.map((item) => productQueries.detail(item.productId)),
   })
 
-  const isLoading = productQueries.some((query) => query.isLoading)
+  const isLoading = cartProductQueries.some((query) => query.isLoading)
 
   // Combine cart items with fetched product data
   const cartItemsWithProducts: CartItemWithProduct[] = cart.items
     .map((item, index) => {
-      const product = productQueries[index]?.data
+      const product = cartProductQueries[index]?.data
       return {
         ...item,
         product,

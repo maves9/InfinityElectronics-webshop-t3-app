@@ -2,6 +2,7 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { useState } from "react"
+import { cacheConfig } from "~/lib/queries"
 
 export function QueryProvider({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(
@@ -9,11 +10,12 @@ export function QueryProvider({ children }: { children: React.ReactNode }) {
       new QueryClient({
         defaultOptions: {
           queries: {
-            staleTime: 60 * 1000, // 1 minute
-            refetchOnWindowFocus: false,
-          },
-        },
-      }),
+            staleTime: cacheConfig.staleTime.default,
+            gcTime: cacheConfig.gcTime.default,
+            refetchOnWindowFocus: false
+          }
+        }
+      })
   )
 
   return (

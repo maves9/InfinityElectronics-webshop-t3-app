@@ -1,8 +1,11 @@
-import { getProduct } from "~/lib/api"
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query"
 import { ProductDetailClient } from "~/components/ProductDetailClient"
 import { notFound } from "next/navigation"
 import { translations } from "~/i18n"
 import { generateProductJsonLd } from "~/lib/seo"
+import { getQueryClient } from "~/lib/getQueryClient"
+import { productQueries } from "~/lib/queries"
+import { getProduct } from "~/lib/api"
 import type { Metadata } from "next"
 import type { Locale } from "~/i18n/config"
 
@@ -69,18 +72,26 @@ export default async function ProductPage({ params }: ProductPageProps) {
     notFound()
   }
 
+  const queryClient = getQueryClient()
+
   try {
-    const product = await getProduct(productId)
+    await queryClient.prefetchQuery(productQueries.detail(productId))
+    const product = queryClient.getQueryData(productQueries.detail(productId).queryKey)
+
+    if (!product) {
+      notFound()
+    }
+
     const jsonLd = generateProductJsonLd(product)
 
     return (
-      <>
+      <HydrationBoundary state={dehydrate(queryClient)}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <ProductDetailClient product={product} />
-      </>
+      </HydrationBoundary>
     )
   } catch (error) {
     console.error("Error fetching product:", error)
