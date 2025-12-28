@@ -21,6 +21,7 @@
     "@t3-oss/env-nextjs": "^0.12.0",
     "@tanstack/react-query": "^5.90.12",
     "clsx": "^2.1.1",
+    "ioredis": "^5.8.2",
     "next": "^15.2.3",
     "next-intl": "^4.6.1",
     "react": "^19.0.0",

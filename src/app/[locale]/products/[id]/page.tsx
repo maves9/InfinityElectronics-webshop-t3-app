@@ -4,8 +4,8 @@ import { notFound } from "next/navigation"
 import { translations } from "~/i18n"
 import { generateProductJsonLd } from "~/lib/seo"
 import { getQueryClient } from "~/lib/getQueryClient"
-import { productQueries } from "~/lib/queries"
-import { getProduct } from "~/lib/api"
+import { queryKeys } from "~/lib/queries"
+import { getCachedProduct } from "~/lib/cachedApi"
 import type { Metadata } from "next"
 import type { Locale } from "~/i18n/config"
 
@@ -26,7 +26,7 @@ export async function generateMetadata({
   }
 
   try {
-    const product = await getProduct(productId)
+    const product = await getCachedProduct(productId)
     const seo = translations[locale].seo.product
 
     const title = seo.titleTemplate.replace("{productName}", product.title)
@@ -75,12 +75,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const queryClient = getQueryClient()
 
   try {
-    await queryClient.prefetchQuery(productQueries.detail(productId))
-    const product = queryClient.getQueryData(productQueries.detail(productId).queryKey)
-
-    if (!product) {
-      notFound()
-    }
+    const product = await getCachedProduct(productId)
+    queryClient.setQueryData(queryKeys.products.detail(productId), product)
 
     const jsonLd = generateProductJsonLd(product)
 
